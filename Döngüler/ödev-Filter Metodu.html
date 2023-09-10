@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ödev-Filter-Metodu</title>
+  </head>
+  <body>
+    <script>
+      const person = [
+        {
+          name: "Adem",
+          age: 25,
+          languages: ["JavaScript", "CSS"],
+        },
+        {
+          name: "Oğuz",
+          age: 33,
+          languages: ["Java", "HTML"],
+        },
+      ];
+    //Soru 1: Yukarıdaki diziyi kullanarak filter() metodu ile yaşı 30'dan büyük olan kişiyi getirin.
+
+    const first_prsn = person.filter(item => item.age > 30 )
+        console.log(first_prsn)
+
+    //Soru 2: Yukarıdaki diziyi kullanarak filter() metodu ile JavaScript bilen kişiyi getirin.
+
+    const second_prsn = person.filter(item => item.languages.includes("JavaScript"))
+    console.log(second_prsn)
+    
+    </script>
+  </body>
+</html>

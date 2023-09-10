@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Array (Dizi) Metotlarının Kullanımı ve Array içinde Array Oluşturma
+    </title>
+  </head>
+  <body>
+    <script>
+      let items = [1, 2, 3, 4, 5];
+
+      //array icinde array:
+      let femaleUsers = ["Ayse", "Hulya", "Merve"];
+      let maleUsers = ["Ahmet", "Hasan", "Mehmet"];
+
+      items.unshift(femaleUsers);
+      console.log(items);
+
+      items.push(maleUsers);
+      console.log(items);
+
+      console.log(items.length);
+      console.log(items[0].length); // Array icindeki istedğimiz Array'in lenght bilgisinialdik
+      console.log(items[0][0]); //Ayse bilgisine ulaştık;;;)
+
+      //Array içerisinden oge ayirmak -> splice(pos, items?)
+      let newItems = items.splice(1,5);
+
+      console.log("newItems: ", newItems);
+      console.log("items: ", items);
+      //Array içersindeki ogenin index bilgisini bulmak -> indexof('value')
+
+      items.unshift("lorem");
+      items.push("ipsum");
+
+      console.log(items.indexOf("ipsum"))
+
+      //Array Kopyalamak -> slice, [...ES6]
+      let copyItems = items
+      console.log(items)
+
+      copyItems.pop() // son ogeyi cikarttik
+      console.log("copyItems: " ,copyItems);
+      console.log("items: " ,items);
+
+       
+      console.log("kopyalandiktan sonraki hali:")
+      copyItems = items.slice() //kopyalama yapti
+      copyItems.pop() // son ogeyi cikarttik
+      console.log("copyItems: " ,copyItems);
+      console.log("items: " ,items);
+
+      let es6Items = [...items]//es6 ve sonrasinda gelen kopyalama islemi
+      console.log(es6Items);
+        
+      //iki Array Bilgisini Birleştirmek -> [...ES6, ...ES6]
+      let allUsers = [...femaleUsers, ...maleUsers] //es6 birden fazla array yapisini birleştirmek
+      console.log(allUsers)
+
+      //Array icerisindeki bilgiyi string'e cevirmek -> toString, join
+      console.log(allUsers.toString())
+      console.log(allUsers.join(" --- "))
+
+      
+
+      //Istedigimiz Index Bilgisine Oge Eklemek -> splice(idex, 0, value)
+
+
+      allUsers.splice(allUsers.length-1, 0, "Melissa")
+      allUsers.splice(Math.floor(allUsers.length / 2), 0, "lorem")
+      console.log(allUsers)
+    </script>
+  </body>
+</html>

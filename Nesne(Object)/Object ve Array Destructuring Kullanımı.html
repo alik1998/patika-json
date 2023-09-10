@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object ve Array Destructuring Kullanımı</title>
+</head>
+<body>
+    <script>
+        //Object Destructuring:
+
+        let settings = {
+            userName: "loremIpsum",
+            password: "BadPassword",
+            isActive: false,
+            ip: "127.0.0.1",
+            serverName: "kodluyoruz.org"
+        }
+
+        //obje içindeki bilgilerin tek seferde cikarilmasi
+        // let userName = settings.userName;
+        // console.log(userName); 
+
+        //rename && destructuring 
+        let {userName: user, password, isActive, ip:severIP,serverName} = settings;
+        console.log(user, password, isActive, severIP,serverName)
+        console.log(settings) //settings hepsini birden çağırır
+        console.log(user)
+
+
+        //obje içindeki bazi bilgilerin cikarilmasi
+        let {userName: userName2, password:password2, isActive:isActive2, ...newSetting} = settings //3nokta koyduğunda kalanını buraya at demiş oluyorsun
+
+        //eger degisken ismi daha once tanimlanmadiysa:
+        // let {userName, password, isActive, ...newSettings} = settings
+
+        console.log(userName2, password2, isActive2, newSetting)
+
+        // objenin destructuring ile kopyalanması
+
+        //HATALI
+        // let settings2 = settings
+        // settings2.userName = "degisen bilgi"
+        // console.log("settings", settings)
+        // console.log("settings2", settings2)
+
+        //doğrusu
+        let settings2 = {...settings} 
+        settings2.userName = "degisen bilgi"
+        console.log("settings", settings)
+        console.log("settings2", settings2)
+
+        let score = [100, 200, 300, 400];
+
+        let [score1, score2, ...otherscore] = score;
+        console.log(score1, score2, otherscore);
+
+        // object kopyalama ile ayni... let settings2 = {...settings} 
+        let copyOfscore = [...scrore];
+        console.log(copyOfscore);
+    </script>
+    
+</body>
+</html>

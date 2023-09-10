@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dizi (Array) Oluşturmak ve Dizi İçindeki Elemanlara Ulaşmak</title>
+</head>
+<body>
+    <p id="info"></p>
+    <script>
+        //Array - Dizilerle çalışmak
+
+        // Array içerisindeki eleman / öge sayısını ogrenmek
+        let domain = "kodluyoruz";
+        let isActive = false;
+        let items = [15, 25, 35, isActive, domain];
+        console.log(items);
+
+        let emptyArray = []; // boş liste
+
+        //Array içerisindeki eleman/oge sayisini ogrenmek.
+        console.log(items.length);// array içindeki öğe sayısı
+
+        document.querySelector("#info").innerHTML = items.length;//html yapısında gösterir;
+
+        //Array içindeki ilk elemanin cagirilması
+        console.log(
+            "ilk eleman:",    
+        items[0]);
+
+        //Array içindeki orta elemanin cagirilması
+        console.log(
+            "ortadaki eleman:",
+            items[Math.floor(items.length / 2)]
+        )
+        //Array içindeki son elemanin cagirilması
+        // console.log( items[5 - 1]);// aray yazarken aritmetik işlem yapa bilinir
+        console.log( 
+            "son eleman:",    
+        items[items.length - 1]);
+
+        //değiken içindeki bilginin Array olup olmadığının kontrol edilmesi;
+        console.log(
+            typeof(items)//object olarak cikti veriyor.
+        );
+
+        console.log(
+            Array.isArray(items)
+        );
+
+        //hangileri isArray -> True verir ? 
+        console.log( "[] : ", Array.isArray( []  ) )
+        console.log( "1 : ", Array.isArray( 1  ) )
+        console.log( "true : ", Array.isArray( true  ) )
+        
+
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Map ile Array İçerisideki Yapının Değiştirilerek Yeni Liste Oluşturulması
+    </title>
+  </head>
+  <body>
+    <script>
+      //array map kullanimi
+      const USERS = ["AYSE", "Mehmet", "Tugce", "Aksel"];
+
+      // userName icinde orjinal isim kalsın,
+      // shortName icinde ilk harf buyuk . (A.)
+      // newName icinde ilk harf buyuk olusun
+      // {userName: "AYSE", shortName: "A.", newName: "Ayse"}
+
+      const NEW_USERS = USERS.map((user) => user.toLocaleLowerCase());
+      console.log(NEW_USERS);
+
+    //   const USERS_OBJ = USERS.map((item) => 
+    //   {
+    //     return {
+    //         userName: item, shortName: `${item[0]}.`, newName: `${item[0]}.toUpperCase()${item.slice(1).toLocaleLowerCase()}`
+    //     }
+
+    //   });
+
+    const USERS_OBJ = USERS.map((item) => (
+        {
+            userName: item, shortName: `${item[0]}.`, newName: `${item[0]}.toUpperCase()${item.slice(1).toLocaleLowerCase()}`
+        }
+    )
+       
+
+      );
+      console.log(USERS_OBJ)
+    </script>
+  </body>
+</html>

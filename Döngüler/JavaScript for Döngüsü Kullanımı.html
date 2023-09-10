@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript for Döngüsü Kullanımı</title>
+  </head>
+  <body>
+    <ul class="list-group" id="userList"></ul>
+    <script>
+      // JavaScript for Döngüsü Kullanımı
+      // for (BaşlangıçAtaması; KoşulİfadesdöngüSonundaÇalışacakİfade) {"Koşul sağlanıyorsa(truçalışmasını istediğim komutlar."};
+
+      let users = ["lorem", "Ipsum", "Dolor"];
+
+      //   for(let index = 0; index < 10; index++) {
+      //     console.log(index)
+      //   }
+
+      // let index = 0
+      // for(; index < 10; index++) {
+      //     console.log(index)
+      //   }
+
+      const userListDOM = document.querySelector("#userList");
+      let index = 0;
+      for (; index < users.length; index++) {
+        const liDOM = document.createElement("li");
+        liDOM.innerHTML = users[index];
+        userListDOM.appendChild(liDOM);
+      }
+    </script>
+  </body>
+</html>

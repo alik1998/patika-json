@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+    // https://developer.mozilla.org/tr/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
+        // array forEach Metou
+        const PRODUCTS = ["laptop", "phone", "speaker", "Desktop pc", "server", "mouse", "Keyboard"]
+
+        // PRODUCTS.forEach((product, index, array) => array[index] = product + " 111" )
+
+        PRODUCTS.forEach((product, index, array) => array[index] = `${product}.toUpperCase()` )// toUpperCase
+
+        console.log(PRODUCTS)
+
+        
+         
+        // const userListDOM = document.querySelector('#userList')
+
+        // for (index = 0; index < users.lenght; index++) {
+        //     const liDOM = document.createElement('li')
+        //     liDOM.innerHTML = users[index]
+        //     userListDOM.appendChild(liDOM)
+        // }
+
+        const userListDOM = document.querySelector('#userList')
+        PRODUCTS.forEach( item => {
+            const liDOM = document.createElement('li')
+            liDOM.innerHTML = item
+            userListDOM.append(liDOM)
+        })
+        
+    </script>
+</body>
+</html>

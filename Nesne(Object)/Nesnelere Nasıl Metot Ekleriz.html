@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nesnelere Nasıl Metot Ekleriz?</title>
+</head>
+<body>
+    <h1>Nesnelere Nasıl Metot Ekleriz?</h1>
+    <script>
+        let user1 = {
+            firstName: "Bilgin",
+            lastName: "Uzman",
+            score: [1, 2, 3, 4],
+            isActive: true,
+            shortName: function() {
+                return `${this.firstName[0].toLocaleUpperCase()} ${this.lastName}`// objenin içerisinde bir fonksiyon tanımlanabilir
+
+            }
+        };
+
+        console.log(user1.shortName())
+
+    </script>
+</body>
+</html>

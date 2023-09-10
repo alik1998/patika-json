@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diziye Yeni Eleman Eklemek, Çıkartmak ve Güncellemek</title>
+</head>
+<body>
+    <script>
+        let items = [10, 20, 30, 40,]
+        console.log("items - ilk hali : ", items)
+
+        //Array: sona oge/eleman eklemek -> push
+
+        items.push(50);
+        console.log("50:", items)
+
+        //Array: basa oge eklemek -> unshift
+        items.unshift(5);
+        console.log("5:", items)
+        //Array: sondaki ogeyi cikarmak -> pop
+        let lastItem = items.pop() //son elemani lastItem icerisine ekledik
+        console.log( "lastItem:" ,lastItem, " items:", items)
+        //Array: bastaki ogeyi cikarmak -> shift
+        let firstItem = items.shift() //ilk elemani lastItem icerisine ekledik
+        console.log( "firstItem:" ,firstItem, " items:", items)
+        // Array içindeki bir ogenin bilgisinin değistirilmesi:
+
+        //ilk ögenin değiştirilmesi
+        items[0] = 5;
+        console.log(items)
+
+        //sonuncu ögenin değiştirilmesi
+        items[items.length - 1] = 1000
+        console.log(items)
+
+        items[10000] = 10000
+        console.log(items) // cıktı : [5, 20, 30, 1000, empty × 9996, 10000]
+    </script>
+</body>
+</html>

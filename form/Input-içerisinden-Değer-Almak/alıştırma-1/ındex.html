@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    />
+    <title>alıştırma-1</title>
+  </head>
+  <body>
+    <!-- // 1-Bir input oluşturup yanına ekleyeceğimiz buton ile butona tıkladığımızda değerimiz alt satırda alalım. -->
+    <form id="userform">
+      <input type="text" name="bilgi" id="bilgi" />
+    <br />
+    <button type="submit" id="btn-giris" class="btn btn-success">submit</button>
+    <p id="ekran"></p>  
+    </form>
+    
+
+    <script>
+    
+      let formDOM = document.querySelector("#userform")
+      var bilgi = document.getElementById("bilgi");
+      var ekran = document.querySelector("#ekran");
+
+     formDOM.addEventListener("submit", myfunc);
+
+      function myfunc(event) {
+        event.preventDefault();        
+        ekran.innerHTML = ("ifade:" + bilgi.value);
+        console.log(bilgi.value);
+        localStorage.setItem("ifade", bilgi.value);
+      }
+    </script>
+  </body>
+</html>
